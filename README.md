@@ -1,4 +1,4 @@
-# WorkFLowy for Coders
+# WorkFlowy for Coders
 
 **A Google Chrome extension for WorkFlowy.com to add markdown support and syntax highlighting in notes**
 
