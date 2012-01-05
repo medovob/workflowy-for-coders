@@ -1,24 +1,23 @@
-## A Google Chrome extension for WorkFlowy.com to add markdown support and syntax highlighting in notes
+# WorkFLowy for Coders
 
-Adds some style tweaks and minor features to the excellent WorkFlowy.com.
+**A Google Chrome extension for WorkFlowy.com to add markdown support and syntax highlighting in notes**
 
-When zoomed into a node, this extension will render markdown type syntax and add syntax highlighting to any code blocks within the node's notes.
+Adds some style tweaks and minor features to the excellent WorkFlowy.com. When zoomed into a node, this extension will render markdown type syntax and add syntax highlighting to any code blocks within the node's notes.
 
     note: to edit notes use the keyboard shortcut (SHIFT+ENTER) or double-click the notes area
 
 Visit <http://daringfireball.net/projects/markdown/syntax> for markdown syntax guide
 
 
-###Installation
+##Installation
 
 Install via Google Chrome Store: <https://chrome.google.com/webstore/detail/hogpngcijkfmbfijfkaapeejhijipddp>
 
-### Update 5 Jan 2012
+## Update 5 Jan 2012
 
 By popular demand, I have removed all the unnecessary style modifications.
 
-
-### Credits:
+## Credits:
 
 Showdown - John Fraser - Javascript port of Markdown
 Showdown Copyright (c) 2007 John Fraser. http://www.attacklab.net/
