@@ -96,22 +96,22 @@ jQuery(document).ready(function($) {
 
 	$("#workflowy").bind("DOMSubtreeModified", function() {
 
-	    $(".project.selected>.notes .content.editing.markdown-processed")
-	    	.removeClass("markdown-processed")
-	    	.parent()
-	    		.find(".markdown")
-	    		  .remove();
-	    
-	    $(".project")
-	    	.not(".selected")
-	        .children(".notes")
-	    		  .children(".content.markdown-processed")
-	    				.removeClass("markdown-processed")
-	    				.parent()
-	    					.find(".markdown")
-	    						.remove();
+    $(".project.selected>.notes .content.editing.markdown-processed")
+    	.removeClass("markdown-processed")
+    	.parent()
+    		.find(".markdown")
+    		  .remove();
+    
+    $(".project")
+    	.not(".selected")
+        .children(".notes")
+    		  .children(".content.markdown-processed")
+    				.removeClass("markdown-processed")
+    				.parent()
+    					.find(".markdown")
+    						.remove();
 
-	    $(".project.selected>.notes .content").not(".markdown-processed,.editing").each(function() {
+    $(".project.selected>.notes .content").not(".markdown-processed,.editing").each(function() {
 	    	
 			var $notes = $(this).parent(),
 			    $content = $(this).addClass("markdown-processed"),
