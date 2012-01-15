@@ -9,7 +9,7 @@
 .project.selected>.notes .content
 {
 	position:absolute;
-	left:50000px;
+	left:-50000px;
 }
 
 
