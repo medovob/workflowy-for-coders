@@ -84,7 +84,8 @@ jQuery.fn.getID = function() {
 
 jQuery(document).ready(function($) {
   
-  var converter = new Showdown.converter();
+  var converter = new Showdown.converter(),
+      timeout;
 
 	$("textarea").focus(function() {
     if($(".project.selected>.notes .content.editing").length) {
@@ -93,7 +94,7 @@ jQuery(document).ready(function($) {
 	}).blur(function() {
 		$(this).removeClass("enhanced");
 	});
-
+  
 	$("#workflowy").bind("DOMSubtreeModified", function() {
 
     $(".project.selected>.notes .content.editing.markdown-processed")
@@ -115,22 +116,29 @@ jQuery(document).ready(function($) {
 	    	
 			var $notes = $(this).parent(),
 			    $content = $(this).addClass("markdown-processed"),
-			    text = $content.text(),
-			    $markdown = $('<div class="markdown wikistyle"></div>').html(converter.makeHtml(text)).appendTo($notes);
-    		
-    	$markdown.find("pre code").addClass("syntax-highlight").css("width","auto !important");
-			$markdown.syntaxHighlight();		
-	    	
-		  var contentID = $content.getID();
-      		
-      $markdown.dblclick(function() {
-        injectScript(function(contentID) {
-       	  jQuery("#"+contentID).mouseover();
-       		if(!jQuery(".editor.hovered textarea").focus().is(".enhanced")) {
-	       	  jQuery(".editor").not(".fixed").find("textarea").focus();
-	       	}
-       	},contentID);
-      });
+			    $markdown = $('<div class="markdown wikistyle"></div>').appendTo($notes);
+    	
+    	if(timeout) {clearTimeout(timeout);}
+    	setTimeout(function() {
+    	  $clone = $content.clone();
+    	  $clone.find(".spacer").remove();
+    	  var text = $clone.text();
+    	  $markdown.html(converter.makeHtml(text));
+    	  $markdown.find("pre code").addClass("syntax-highlight").css("width","auto !important");
+  			$markdown.syntaxHighlight();		
+
+  		  var contentID = $content.getID();
+
+        $markdown.dblclick(function() {
+          injectScript(function(contentID) {
+         	  jQuery("#"+contentID).mouseover();
+         		if(!jQuery(".editor.hovered textarea").focus().is(".enhanced")) {
+  	       	  jQuery(".editor").not(".fixed").find("textarea").focus();
+  	       	}
+         	},contentID);
+        });
+    	},200)
+    	
     });
 
 	    
