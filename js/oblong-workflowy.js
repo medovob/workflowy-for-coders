@@ -95,7 +95,7 @@ jQuery(document).ready(function($) {
 		$(this).removeClass("enhanced");
 	});
   
-	$("#workflowy").bind("DOMSubtreeModified", function() {
+	$("#pageContainer").bind("DOMSubtreeModified", function() {
 
     $(".project.selected>.notes .content.editing.markdown-processed")
     	.removeClass("markdown-processed")
@@ -128,7 +128,9 @@ jQuery(document).ready(function($) {
   			$markdown.syntaxHighlight();		
 
   		  var contentID = $content.getID();
-
+        
+        $("*:focus").blur().focus(); // refocus to reset position of textarea
+        
         $markdown.dblclick(function() {
           injectScript(function(contentID) {
          	  jQuery("#"+contentID).mouseover();
