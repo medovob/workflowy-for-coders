@@ -59,13 +59,13 @@ jQuery.SyntaxHighlighter.init({
 	 * The baseUrl to load Google's Prettify from.
 	 * This is used to load in Google's Prettify if the load option is true and it was not found.
 	 */
-	'prettifyBaseUrl': 'http://github.com/balupton/jquery-syntaxhighlighter/raw/master/prettify',
+	'prettifyBaseUrl': 'https://github.com/balupton/jquery-syntaxhighlighter/raw/master/prettify',
 
 	/**
 	 * The baseUrl to load our Syntax Highlighter from.
 	 * This is used to load in the stylesheet and additional themes.
 	 */
-	'baseUrl': 'http://github.com/balupton/jquery-syntaxhighlighter/raw/master'
+	'baseUrl': 'https://github.com/balupton/jquery-syntaxhighlighter/raw/master'
 
 });
 

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "WorkFlowy for Coders",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "An extension for WorkFlowy to add markdown support and syntax highlighting in notes",
   "content_scripts": [
   	{
