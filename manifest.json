@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
   "name": "WorkFlowy for Coders",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "An extension for WorkFlowy to add markdown support and syntax highlighting in notes",
   "content_scripts": [
   	{
       "matches": ["http://workflowy.com/*","https://workflowy.com/*"],
       "css": ["css/oblong-workflowy.css","js/syntax-highlighter/prettify/prettify.css"],
-      "js": ["js/jquery.js", "js/showdown.js","js/jquery.textarea.js","js/syntax-highlighter/prettify/prettify.js","js/syntax-highlighter/scripts/jquery.syntaxhighlighter.js","js/oblong-workflowy.js"],
+      "js": ["js/jquery.js", "js/showdown.js","js/jquery.textarea.js","js/syntax-highlighter/prettify/prettify.js","js/syntax-highlighter/scripts/jquery.syntaxhighlighter.js","js/oblong-workflowy.js","js/caja-html-sanitizer.js"],
       "runat":"document_end"
     }
   ]

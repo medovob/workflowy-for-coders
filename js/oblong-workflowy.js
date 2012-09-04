@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
     	  $clone = $content.clone();
     	  $clone.find(".spacer").remove();
     	  var text = $clone.text();
-    	  $markdown.html(converter.makeHtml(text));
+    	  $markdown.html(html_sanitize(converter.makeHtml(text)));
     	  $markdown.find("pre code").addClass("syntax-highlight").css("width","auto !important");
   			$markdown.syntaxHighlight();		
 
@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
 	    
 	  $("#exportPopup .previewWindow").find(".note").not(".markdown-enabled").addClass("markdown-enabled wikistyle").each(function() {
 	    var text = $(this).text();
-	    $(this).html(converter.makeHtml(text));
+	    $(this).html(html_sanitize(converter.makeHtml(text)));
 	    $(this).find("pre code").addClass("syntax-highlight");
 			$(this).syntaxHighlight();
 	  });
